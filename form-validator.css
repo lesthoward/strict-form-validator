@@ -1,0 +1,123 @@
+:root {
+    --text-color:rgba(0,0,0,.6);
+    --success-color:#2ecc71;
+    --error-color:#e74d3c;
+    --error-border-color: rgb(231, 76, 60, .4);;
+}
+
+html {
+    font-size: 62.5%;
+}
+*, ::before,::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2A2D43;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+}
+
+.container {
+    max-width: 90%;
+    margin: 5rem auto;
+}
+
+.register {
+    background: #F2F2F2;
+    width: 50rem;
+    max-width: 100%;
+    margin: auto;
+    padding: 4rem 3rem;
+    border-radius: .5rem;
+    box-shadow: -.5rem .1rem 1rem rgba(0, 0, 0, .1);
+}
+
+.register__title {
+    margin-top: 0;
+}
+
+.register__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.register__label {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-bottom: .3rem;
+    font-weight: 300;
+}
+
+.register__field--error .register__input{
+    border: .1rem solid var(--error-border-color);
+}
+
+.register__field--success .register__input{
+    border: .1rem solid var(--success-color);
+}
+
+.register__input {
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    border: .1rem solid rgb(42, 45, 67, .3);
+}
+
+.register__error {
+    color: var(--error-color);
+    font-weight: 300;
+    margin-top: .5rem;
+    font-size: 1.2rem;
+    text-align: right;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .2s ease;
+}
+
+.register__field--error .register__error{
+    visibility: visible;
+    opacity: 1;
+}
+
+.register__submit {
+    background: #535668;
+    color: #fff;
+    display: block;
+    width: 100%;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    border: none;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+.register__field--error .register__submit {
+    animation: .3s bounce ;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(.5rem);
+    }
+    75% {
+        transform: translateX(-1.5rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.register__submit:hover {
+    transform: scale(1.02);
+}
